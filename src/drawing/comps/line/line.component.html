@@ -1,0 +1,13 @@
+<svg:g
+  [attr.transform]="'matrix(1,0,0,1,' + _transform.join(',') + ')'"
+  nowrapper
+  #highlightEl
+>
+  <point [transform]="'translate(' + endPoint.join(',') + ')'"></point>
+  <path
+    [edit-highlight]="highlightEl"
+    edit-highlight-type="stroke-width"
+    #viewEl
+    [attr.d]="d"
+  ></path>
+</svg:g>

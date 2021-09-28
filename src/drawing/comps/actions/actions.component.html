@@ -1,0 +1,22 @@
+<aside>
+  <button
+    *ngFor="let action of actions; index as idx"
+    [class.actived]="idx == actived"
+    (click)="onSelect($event, idx)"
+    [tooltip]="action.alt"
+  >
+    <img [src]="action.src" [alt]="action.alt" />
+  </button>
+</aside>
+
+<section type="model" *ngIf="activedAction !== null && actived >= 0">
+  <header>
+    <h1>{{ activedAction.alt }}</h1>
+  </header>
+  <main>
+    <ng-container #mainHolder></ng-container>
+  </main>
+  <footer>
+    <ng-container #footerHolder></ng-container>
+  </footer>
+</section>

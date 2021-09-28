@@ -1,0 +1,9 @@
+<div [style.display]="display ? 'inline-block' : 'none'">
+  <ul role="menu">
+    <ng-container *ngFor="let item of items">
+      <li (click)="item.onClick($event)" role="menuitem">
+        {{ item.label }}
+      </li>
+    </ng-container>
+  </ul>
+</div>

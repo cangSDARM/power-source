@@ -1,0 +1,38 @@
+<svg:g
+  [attr.font-size]="fontSize.toString() + 'px'"
+  [attr.transform]="transform"
+  nowrapper
+  (dblclick)="dblclick()"
+  (moveable)="motionCallback($event[0])"
+  [moveable-config]="{
+    nonStruct: true,
+    reqEditorMode: true,
+    disableWhenLeave: false,
+    bindFor: 0
+  }"
+  #highlightEl
+>
+  <ng-container *ngIf="!isEditing">
+    <text
+      [edit-highlight]="highlightEl"
+      edit-highlight-type="border"
+      #viewEl
+      dominant-baseline="middle"
+      text-anchor="middle"
+    >
+      <tspan *ngIf="title.trim() !== ''">
+        {{ title }}
+      </tspan>
+    </text>
+  </ng-container>
+</svg:g>
+
+<ng-container *ngIf="isEditing">
+  <div class="editor">
+    <div #editorEl>
+      <span contenteditable="true" autofocus (input)="inputHandle($event)">{{
+        title
+      }}</span>
+    </div>
+  </div>
+</ng-container>

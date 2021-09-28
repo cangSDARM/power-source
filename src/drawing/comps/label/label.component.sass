@@ -1,0 +1,41 @@
+g
+    white-space: nowrap
+    font-family: "Times New Roman", "Microsoft YaHei"
+    fill: currentcolor
+    stroke-width: 0
+    text-anchor: middle
+    transform-box: fill-box
+    
+    path,
+    rect
+        fill: transparent
+        stroke: black
+
+.editor
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    background-color: rgba(0, 0, 0, 0.01)
+
+    > *
+        position: absolute
+        transform: translate(-50%, -50%)
+        box-shadow: 0 0 0 2px rgba(0, 0, 0, .2)
+        display: flex
+        align-items: center
+        justify-content: center
+        border-radius: 2px
+        padding: 2px
+        font-size: 14px
+
+        > *
+            outline: none
+            display: inline-block
+            padding: 4px 6px
+            width: 100%
+            height: 100%
+            line-height: 1.15
+            cursor: auto
+            background-color: rgb(255, 255, 255)

@@ -1,0 +1,64 @@
+aside
+    position: absolute
+    transform: translateZ(0)
+    bottom: 1rem
+    left: 1rem
+    z-index: 1
+    display: flex
+
+section
+    transform: translateZ(0)
+    position: absolute
+    top: 50%
+    left: 0
+    bottom: 0
+    right: 50%
+    margin: 1rem
+    background-color: #F9FAFB
+    box-shadow: 0 0 0 #fff, 0 0 0 1px rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.1)
+    border-radius: .25rem
+    display: flex
+    flex-direction: column
+    justify-content: flex-start
+    align-items: flex-start
+    padding: 1px
+    resize: both
+    overflow: auto
+
+    > *
+        padding: .1rem .1rem
+
+    > header
+        h1
+            border-radius: .25rem
+            display: inline-block
+            font-size: 1.25rem
+            background-color: rgb(131 129 153 / 13%)
+            padding: .25rem .8rem
+            text-transform: capitalize
+        width: 100%
+        background-color: #fff
+        cursor: default
+        user-select: none
+
+    > main
+        overflow: auto
+
+    > footer
+        align-self: flex-end
+
+button
+    &:hover
+        background-color: #E5E7EB
+    &.actived
+        background-color: #BFDBFE
+
+    will-change: background-color
+    cursor: pointer
+    padding: 2px
+    background-color: inherit
+    height: 2.25rem
+    width: 2.25rem
+    margin-right: .1rem
+    border-radius: .25rem
+    transition: all .1s

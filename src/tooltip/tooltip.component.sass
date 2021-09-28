@@ -1,0 +1,36 @@
+:host
+    $arrow-size: .45rem
+    position: absolute
+    top: 0
+    left: 0
+    will-change: top, left
+    display: block
+    padding-bottom: $arrow-size
+    z-index: 999
+    transform: translate(-50%, -50%) translateZ(0)
+    transform-origin: center
+
+    > div[arraw="true"]
+        position: absolute
+        left: calc(50% - #{$arrow-size} / 2)
+        bottom: 0
+        display: block
+        width: $arrow-size
+        height: $arrow-size
+
+        &::before
+            top: 0
+            width: $arrow-size
+            height: $arrow-size
+            transform: translateY(calc(-1 * #{$arrow-size} / 2)) rotate(45deg)
+            position: absolute
+            content: ""
+            background-color: #000
+
+    > :not(div[arraw="true"])
+        padding: .25rem .5rem
+        color: #fff
+        text-align: center
+        background-color: #000
+        border-radius: .25rem
+        user-select: none
